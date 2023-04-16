@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Troca de Cores</title>
+ <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="media_queries.css">
+ <link rel="shortcut icon" href="paleta-de-cores.png" type="image/x-icon">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+</head>
+<body id="corpo">
+  <div id="menu">
+   <h1>Escolha uma Cor</h1>
+   <div id="botoes">
+    <input class="botao" id="azul" onmouseenter="mudar_cor_azul()" type="button" value="">
+    <input class="botao" id="amarelo" onmouseenter="mudar_cor_amarelo()" type="button" value="">
+    <input class="botao" id="verde" onmouseenter="mudar_cor_verde()" type="button" value="">
+    <input class="botao" id="vermelho" onmouseenter="mudar_cor_vermelho()" type="button" value="">
+    <input class="botao" id="preto" onmouseenter="mudar_cor_preto()" type="button" value="">
+    <input class="botao" id="rosa" onmouseenter="mudar_cor_rosa()" type="button" value="">
+   </div>
+   <input class="botao" id="branco" onclick="mudar_cor_branco()" type="button" value="Reset">
+  </div>
+
+  <script>
+   var body = window.document.getElementById('corpo')
+   var div = window.document.getElementById('menu')
+   function mudar_cor_azul(){
+    body.style.backgroundColor = 'blue'
+    div.style.border = '3px solid black'
+   }
+   function mudar_cor_amarelo(){
+    body.style.backgroundColor = 'yellow'
+    div.style.border = '3px solid black'
+   }
+   function mudar_cor_verde(){
+    body.style.backgroundColor = 'green'
+    div.style.border = '3px solid black'
+   }
+   function mudar_cor_vermelho(){
+    body.style.backgroundColor = 'red'
+    div.style.border = '3px solid black'
+   }
+   function mudar_cor_preto(){
+    body.style.backgroundColor = 'black'
+    div.style.border = '3px solid white'
+   }
+   function mudar_cor_rosa(){
+    body.style.backgroundColor = 'rgb(255, 83, 112)'
+    div.style.border = '3px solid black'
+   }
+   function mudar_cor_branco(){
+    body.style.backgroundColor = 'white'
+    div.style.border = '3px solid black'
+   }
+  </script>
+</body>
+</html>

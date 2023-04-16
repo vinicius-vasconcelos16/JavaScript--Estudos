@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Troca de Cores</title>
+ <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="media_queries.css">
+ <link rel="shortcut icon" href="paleta-de-cores.png" type="image/x-icon">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+</head>
+<body id="corpo">
+  <div id="menu">
+   <h1>Escolha uma Cor</h1>
+   <div id="botoes">
+    <input class="botao" id="azul" onmouseenter="mudar_cor_azul()" type="button" value="">
+    <input class="botao" id="amarelo" onmouseenter="mudar_cor_amarelo()" type="button" value="">
+    <input class="botao" id="verde" onmouseenter="mudar_cor_verde()" type="button" value="">
+    <input class="botao" id="vermelho" onmouseenter="mudar_cor_vermelho()" type="button" value="">
+    <input class="botao" id="preto" onmouseenter="mudar_cor_preto()" type="button" value="">
+    <input class="botao" id="rosa" onmouseenter="mudar_cor_rosa()" type="button" value="">
+   </div>
+   <input class="botao" id="branco" onclick="mudar_cor_branco()" type="button" value="Reset">
+   <br>
+   <span id="compartilhar" class="material-symbols-outlined" onclick="compartilhar()">ios_share</span>
+  </div>
+  <div id="share">
+    <h1>Compartilhar</h1>
+    <div id="caixa-link">
+      <p id="link">Link...</p>
+    </div>
+    <span class="icons">
+      <a href="https://www.instagram.com/direct/inbox/" target="_blank"><img src="instagram.ico" alt="instagram"></a>
+    </span>
+    <span class="icons" id="wpp">
+      <a href="https://wa.me" target="_blank"><img width="48px" height="48px" src="wpp.png" alt="whatsapp" style="border-radius: 90px;"></a>
+    </span>
+    <div>
+      <a href="treinojs.html"><span id="voltar" class="material-symbols-outlined">undo</span></a>
+    </div>
+  </div>
+  
+  
+  <script>
+    var body = window.document.getElementById('corpo')
+    var div = window.document.getElementById('menu')
+    var share = window.document.getElementById('share')
+    var fume = window.document.getElementById('fume')
+    var html = window.document.getElementsByTagName('html')[0] 
+    var url = window.location.href
+    var link = window.document.querySelector('p#link')
+    
+   function mudar_cor_azul(){
+    body.style.backgroundColor = 'blue'
+    div.style.border = '3px solid black'
+   }
+   function mudar_cor_amarelo(){
+    body.style.backgroundColor = 'yellow'
+    div.style.border = '3px solid black'
+   }
+   function mudar_cor_verde(){
+    body.style.backgroundColor = 'green'
+    div.style.border = '3px solid black'
+   }
+   function mudar_cor_vermelho(){
+    body.style.backgroundColor = 'red'
+    div.style.border = '3px solid black'
+   }
+   function mudar_cor_preto(){
+    body.style.backgroundColor = 'black'
+    div.style.border = '3px solid white'
+   }
+   function mudar_cor_rosa(){
+    body.style.backgroundColor = 'rgb(255, 83, 112)'
+    div.style.border = '3px solid black'
+   }
+   function mudar_cor_branco(){
+    body.style.backgroundColor = 'white'
+    div.style.border = '3px solid black'
+   }
+   function compartilhar(){
+    body.style.width = '100vw'
+    body.style.height = '100vw'
+    body.style.margin = '0px'
+    body.style.padding = '0px'
+    html.style.padding = '0px'
+    div.style.display = 'none'
+    share.style.display = 'block'
+    body.style.backgroundColor = 'rgba(0, 0, 0, 0.45)'
+    link.innerHTML = url
+
+   }
+  </script>
+</body>
+</html>
