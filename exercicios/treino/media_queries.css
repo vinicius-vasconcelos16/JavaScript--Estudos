@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+@media screen and (max-width: 1030px){
+ *{
+  overflow: hidden;
+ }
+ 
+ div#menu{
+  width: 175px;
+  height: 260px;
+  padding-top: 10px;
+ }
+ 
+ div#menu > h1{
+   display: none;
+ }
+ 
+ #branco{
+  width: 100px;
+  border-radius: 10px;
+  background-color: white;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4);
+ }
+}
+
+@media screen and (max-width: 1200px){
+
+   div#share{
+    display: none;
+    border-radius: 10px;
+    background-color: white;
+    width: fit-content;
+    padding: 20px 10px 20px 10px;
+    border: 3px solid black;
+   }
+   
+   #caixa-link{
+    border-radius: 5px;
+    border: 2px solid black;
+    width: fit-content;
+    flex-wrap: wrap;
+    height: 6vh;
+    padding: 5px 5px 0px 5px;
+    margin-bottom: 10px;
+   }
+   
+   #caixa-link > p{
+    font-size: 1.4em;
+    margin: 0px;
+    width: 100%;
+   }
+   
+   .icons{
+    border-radius: 90px;
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+   }
+   
+}
