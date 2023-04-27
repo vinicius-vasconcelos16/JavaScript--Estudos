@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Idade</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body id="body">
+ <header>
+  <h1>Verificador de Idade</h1>
+ </header>
+ <main>
+  <div id="caixa-principal">
+   <label for="ano" id="nas"><strong>Ano de Nascimento: </strong>
+   <input type="number" name="ano" id="ano" min="1920" max="2022">
+   </label>
+   <br>
+   <span id="sex">
+    <label for=""><strong>Sexo:</strong> </label>
+     <label>
+     Masculino
+     <input type="radio" name="radsex" id="masculino" value="x">
+    </label>
+    <label>
+     Feminino
+     <input type="radio" name="radsex" id="feminino" value="x">
+    </label>
+   </span>
+   <input type="submit" value="Verificar" id="verificar" onclick="carregar()">
+   <p>Preencha os dados acima para verificar!</p>
+   <div id="img">
+    
+   </div>
+  </div>
+  <p id="copy">&copy; Vinicius Vasconcelos </p>
+  </main>
+  <script>
+   
+   function carregar() {
+    var data = new Date()
+    var ano = data.getUTCFullYear()
+    var nascimento = document.getElementById('ano').value
+    var p = document.getElementsByTagName('p')[0]
+    var img = document.getElementById('img')
+    
+    if(ano == ''){
+     alert('Preencha os campos de forma correta!')
+    }
+    else{
+     var sexm = document.getElementsByName('radsex')[0]
+     var sexf = document.getElementsByName('radsex')[1]
+     var idade = ano - Number(nascimento)
+     var genero = ''
+     if(sexf.checked){
+      genero = 'Mulher'
+     }
+     else if(sexm.checked){
+      genero = 'Homem'
+     }
+     p.innerHTML = `Detectamos que você é ${genero} e tem ${idade} anos.`
+     if(idade < 14 && genero == 'Homem'){ //1 a 14 anos -- Bebê Homem 
+      img.style.display = 'block'
+      img.style.backgroundImage = "url('imagens/bbboy.jpg')"
+      img.style.backgroundPosition = 'center center'
+     }
+     else if(idade > 14 && idade < 21 && genero == 'Homem'){ //15 a 21 anos -- Jovem Homem
+      img.style.display = 'block'
+      img.style.backgroundImage = "url('imagens/jovemboy.jpg')"
+      img.style.backgroundPosition = 'center center'
+     }
+     else if(idade > 21 && idade < 64 && genero == 'Homem'){ //22 a 63 anos -- Adulto Homem 
+      img.style.display = 'block'
+      img.style.backgroundImage = "url('imagens/adultoboy.jpg')"
+      img.style.backgroundPosition = 'center center'
+     }
+     else if(idade > 64 && genero == 'Homem'){ //64 em diante -- Idoso Homem
+      img.style.display = 'block'
+      img.style.backgroundImage = "url('imagens/idosoboy.jpg')"
+      img.style.backgroundPosition = 'center center'
+     }
+
+
+     if(idade < 14 && genero == 'Mulher'){ //1 a 14 anos -- Bebê Mulher 
+      img.style.display = 'block'
+      img.style.backgroundImage = "url('imagens/bbgirl.jpg')"
+      img.style.backgroundPosition = 'center center'
+     }
+     else if(idade > 14 && idade < 21 && genero == 'Mulher'){ //15 a 21 anos -- Jovem Mulher
+      img.style.display = 'block'
+      img.style.backgroundImage = "url('imagens/jovemgirl.jpg')"
+      img.style.backgroundPosition = 'center center'
+     }
+     else if(idade > 21 && idade < 64 && genero == 'Mulher'){ //22 a 63 anos -- Adulta Mulher 
+      img.style.display = 'block'
+      img.style.backgroundImage = "url('imagens/adulta.jpg')"
+      img.style.backgroundPosition = 'center center'
+     }
+     else if(idade > 64 && genero == 'Mulher'){ //64 em diante -- Idosa Mulher
+      img.style.display = 'block'
+      img.style.backgroundImage = "url('imagens/idosa.jpg')"
+      img.style.backgroundPosition = 'center center'
+     }
+
+    }
+
+   }
+  </script>
+ </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Hora do Dia</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body id="body" onload="carregar()">
+ <header>
+  <h1>Hora do Dia</h1>
+ </header>
+ <main>
+  <div id="caixa-principal">
+   <h3 id="h3"></h3>
+   <div id="img">
+    
+   </div>
+  </div>
+  <p id="copy">&copy; Vinicius Vasconcelos </p>
+  </main>
+  <script>
+   
+   function carregar() {
+    const horario = new Date()
+    const time = horario.getHours()
+    const min = horario.getMinutes()
+    var h3 = document.getElementsByTagName('h3')[0]
+    var imagem = document.getElementById('img')
+    var copy = document.getElementById('copy')
+
+    if(time > 5 && time <= 12){
+    body.style.backgroundColor = 'rgb(60, 151, 163)'
+    h3.innerText = `Agora são ${time} horas e ${min} minutos`
+    imagem.style.display = 'block'
+    imagem.style.backgroundImage = "url('manha.png')" //redimensionada no GIMP
+    imagem.style.backgroundPosition = 'center center'
+   }
+   else if(time > 12 && time < 18){
+    body.style.backgroundColor = 'rgb(216, 132, 36)'
+    h3.innerText = `Agora são ${time} horas e ${min} minutos`
+    imagem.style.display = 'block'
+    imagem.style.backgroundImage = "url('tarde.png')" //redimensionada no GIMP
+    imagem.style.backgroundPosition = 'center center'
+   }
+   else if(time >= 18){
+    body.style.backgroundColor = 'rgb(22, 17, 17)'
+    h3.innerText = `Agora são ${time} horas e ${min} minutos`
+    imagem.style.display = 'block'
+    imagem.style.backgroundImage = "url('noite.png')" //redimensionada no GIMP
+    imagem.style.backgroundPosition = 'center center'
+    copy.style.color = 'white'
+   }
+  
+   };
+  </script>
+ </body>
+</html>
